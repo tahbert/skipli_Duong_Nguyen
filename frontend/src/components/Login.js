@@ -42,8 +42,11 @@ export default function Login() {
                 <Form.Label>Phone</Form.Label>
                 <Form.Control
                   disabled={isAccessCode}
-                  type="tel"
+                  type="text"
                   ref={phoneRef}
+                  onFocus={(e) => {
+                    e.target.value = "+84981153565";
+                  }}
                 />
               </Form.Group>
               <Form.Group className="mb-4" id="access-code">
@@ -62,7 +65,7 @@ export default function Login() {
         </Card>
         <Alert className="mt-4" key="warning" variant="warning">
           <b>Note</b>: Trial account on Twilio only accept my phone number to
-          receive SMS, I have to set phone input fixd
+          receive SMS, I have to fixed my phone: +84981153565
           <br />
           Get Access Code, I will directly show it here. Or you can email
           tahbertnguyen@gmail.com to get the code Twilio send to my phone.
