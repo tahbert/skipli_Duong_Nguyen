@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "expressjs": "^1.0.1",
+    "firebase-admin": "^11.5.0",
+    "react-icons": "^4.7.1",
+    "twilio": "^3.84.1"
+  },
+  "name": "y",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

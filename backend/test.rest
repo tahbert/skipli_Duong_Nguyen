@@ -1,0 +1,36 @@
+### GET PHONE NUMBER
+GET http://localhost:3000/
+
+
+### POST NUMBER 
+
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+    "number": "+84981153565"
+}
+
+###
+POST http://localhost:8080/login/+84981153565
+Content-Type: application/json
+
+{
+    "accessCode": "248266"
+}
+
+### POST USERS
+POST http://localhost:8080/user/+84981153565
+Content-Type: application/json
+
+{
+    "likedUser": 
+        {
+            "id": "790023925"
+        }
+    
+}
+
+### GET USERS
+Get http://localhost:8080/user/+84981153565
+Content-Type: application/json
