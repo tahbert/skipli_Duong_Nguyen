@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Container } from "react-bootstrap";
 import ListView from "./ListView.js";
-import Pagination from "./Pagination.js";
+import PageControl from "./PageControl.js";
 import { useAuthContext } from "../contexts/AuthContext.js";
 
 export default function DashBoard() {
@@ -12,7 +12,7 @@ export default function DashBoard() {
   return (
     <Container>
       <Wrapper>
-        <Pagination />
+        <PageControl />
         <ListView users={items} />
       </Wrapper>
     </Container>

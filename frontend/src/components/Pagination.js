@@ -1,4 +1,3 @@
-import { Container } from "react-bootstrap";
 import { useAuthContext } from "../contexts/AuthContext";
 
 const Pagination = () => {
@@ -9,17 +8,15 @@ const Pagination = () => {
     pageNumbers.push(i);
   }
   return (
-    <Container>
-      <ul className="pagination">
-        {pageNumbers.map((p) => {
-          return (
-            <li className="page-item" key={p} onClick={() => paginate(p)}>
-              {p}
-            </li>
-          );
-        })}
-      </ul>
-    </Container>
+    <ul className="pagination">
+      {pageNumbers.map((p) => {
+        return (
+          <li className="page-item" key={p} onClick={() => paginate(p)}>
+            {p}
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 export default Pagination;

@@ -136,6 +136,7 @@ export function AuthProvides({ children }) {
     isLoading,
     totalUsers,
     usersPerPage,
+    setUsersPerPage,
     currentPage,
     paginate,
     userProfile,
