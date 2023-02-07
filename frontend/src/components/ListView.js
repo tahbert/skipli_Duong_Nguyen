@@ -9,8 +9,11 @@ export default function ListView({ users }) {
     isLoading,
     userProfile: { favorite_github_users },
   } = useAuthContext();
+
   useEffect(() => {
-    setIds(favorite_github_users?.map((item) => item.id));
+    if (favorite_github_users) {
+      setIds(favorite_github_users?.map((item) => item.id));
+    }
   }, [favorite_github_users]);
 
   if (isLoading) {
@@ -70,7 +73,7 @@ export default function ListView({ users }) {
   return (
     <Container style={{ maxWidth: "400px" }}>
       <Alert variant="primary" className="text-center">
-        Enter to search Github users
+        Your search is empty, typing to search now!
       </Alert>
     </Container>
   );

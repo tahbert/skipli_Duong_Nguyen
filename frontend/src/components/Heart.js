@@ -7,12 +7,13 @@ export default function Heart({ user, isHearted }) {
   const { likeGithubUser } = useAuthContext();
 
   function handleClick() {
-    const { id, login, html_url, avatar_url, followers_url } = user;
+    const { id, login, html_url, avatar_url, repos_url, followers_url } = user;
     const request = {
       id,
       login,
       html_url,
       avatar_url,
+      repos_url,
       followers_url,
     };
     likeGithubUser(request);

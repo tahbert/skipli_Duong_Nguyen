@@ -1,7 +1,8 @@
 import { useAuthContext } from "../contexts/AuthContext";
+import { useState } from "react";
 
 const Pagination = () => {
-  const { usersPerPage, setUsersPerPage } = useAuthContext();
+  const { usersPerPage, setUsersPerPage, totalUsers } = useAuthContext();
 
   // options
   const options = [
@@ -14,7 +15,7 @@ const Pagination = () => {
   };
 
   return (
-    <div className="user-per-page">
+    <div className={totalUsers ? "user-per-page" : "user-per-page hidden"}>
       <label>User Per Page: </label>
       <select value={usersPerPage} onChange={handleOptions}>
         {options.map((option) => (

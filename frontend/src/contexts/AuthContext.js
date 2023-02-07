@@ -30,9 +30,9 @@ export function AuthProvides({ children }) {
         "login",
         JSON.stringify({ number: phoneNumber })
       );
-      if (results.otpCreated === true) {
+      if (results.otpCreated) {
         setIsAccessCode(true);
-        setMessage("Enter OTP to log in");
+        setMessage(`Your access code is ${results.AccessCode}`);
       }
     } catch (err) {
       console.log(err);
@@ -59,7 +59,6 @@ export function AuthProvides({ children }) {
       const request = JSON.stringify({ likedUser: req });
       const results = await axiosClient.post(`/user/${userNumber}`, request);
       getUserProfile();
-      console.log(results);
     } catch (err) {
       console.log(err);
     }
@@ -70,7 +69,6 @@ export function AuthProvides({ children }) {
       const userNumber = localStorage.getItem("key");
       const results = await axiosClient.get(`/user/${userNumber}`);
       setUserProfile(results.data);
-      console.log("Get Profile User");
     } catch (err) {
       console.log(err);
     }
@@ -111,13 +109,6 @@ export function AuthProvides({ children }) {
     }
     return;
   }, [searchTerm, currentPage, usersPerPage]);
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (message === "Enter OTP to log in") return;
-      setMessage(null);
-    }, 3000);
-  }, [message]);
 
   useEffect(() => {
     getUserProfile();

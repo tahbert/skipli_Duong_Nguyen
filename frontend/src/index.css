@@ -37,3 +37,9 @@ code {
 .user-per-page {
   flex-shrink: 0;
 }
+.user-per-page label {
+  margin-right: 10px;
+}
+.user-per-page.hidden {
+  display: hidden;
+}

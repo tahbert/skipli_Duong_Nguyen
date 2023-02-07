@@ -26,7 +26,7 @@ router.post("/", async (req, res, next) => {
       .catch(() => {
         return res.status(500).send({ otpCreated: false });
       });
-    res.status(200).send({ otpCreated: true });
+    res.status(200).send({ otpCreated: true, AccessCode });
   } catch (err) {
     console.log(err);
     res.status(500);
